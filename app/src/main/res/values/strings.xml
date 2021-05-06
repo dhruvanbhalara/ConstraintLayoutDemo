@@ -15,4 +15,13 @@
     <string name="email">Email</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
+    <string name="rating_bar">Rating Bar</string>
+    <string name="spinner">Spinner</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="progressbar">ProgressBar</string>
+    <string name="seek_here">Seek Here</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="please_uncheck_me">Please uncheck me</string>
+    <string name="checkbox">Checkbox</string>
 </resources>

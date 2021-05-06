@@ -1,112 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:fillViewport="true"
     tools:context=".LoginActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="fitXY"
-        android:src="@drawable/login_bg" />
+        android:layout_height="wrap_content">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="28dp"
-        android:layout_weight="1">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/topImg"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="28dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_bg"
+            app:layout_constraintBottom_toTopOf="@+id/txtWelcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtWelcome"
+            style="@style/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
             android:text="@string/welcome"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            app:layout_constraintBottom_toTopOf="@+id/inputEmail"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/topImg" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputEmail"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtWelcome"
-            android:layout_marginTop="15dp"
+            android:layout_marginVertical="8dp"
             android:drawableEnd="@drawable/login_email"
             android:drawableRight="@drawable/login_email"
             android:hint="@string/email_or_phone"
             android:inputType="textEmailAddress"
             android:nextFocusForward="@id/inputPwd"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPwd"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/inputEmail"
-            android:layout_marginTop="6dp"
             android:drawableEnd="@drawable/login_email_pw"
             android:drawableRight="@drawable/login_email_pw"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtForgotPwd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/inputPwd"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginVertical="12dp"
             android:text="@string/forgot_password"
             android:textColor="@color/grey"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/guideline8"
+            app:layout_constraintTop_toBottomOf="@+id/inputPwd" />
 
-        <LinearLayout
-            android:id="@+id/btns"
-            android:layout_width="match_parent"
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnReg"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txtForgotPwd"
-            android:layout_marginTop="26dp"
-            android:orientation="horizontal">
+            android:background="@drawable/outline_btn"
+            android:text="@string/register"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnSignIn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSignIn"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            app:layout_constraintWidth_percent="0.45" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnReg"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/outline_btn"
-                android:text="@string/register" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/filled_btn"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/txtTnC"
+            app:layout_constraintEnd_toEndOf="@id/guideline8"
+            app:layout_constraintTop_toBottomOf="@+id/txtForgotPwd"
+            app:layout_constraintWidth_percent="0.45" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/filled_btn"
-                android:text="@string/sign_in"
-                android:textColor="@color/white" />
-        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtTnC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btns"
-            android:layout_centerInParent="true"
-            android:layout_marginHorizontal="60dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="28dp"
             android:gravity="center_horizontal"
             android:text="@string/tnc"
             android:textAlignment="center"
-            android:textColor="@color/grey" />
-    </RelativeLayout>
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
+            app:layout_constraintWidth_percent="0.6" />
 
-</LinearLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="18dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="18dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
