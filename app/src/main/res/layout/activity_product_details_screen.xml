@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ProductDetailsScreen">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:navigationIcon="@drawable/back_arrow"
+                android:minHeight="?attr/actionBarSize">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="18dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgCart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/cart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="18dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="18dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/product_image"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/bestseller"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toTopOf="@+id/imgProduct" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtProductBrand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Jeywn"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/imgProduct"
+            app:textAllCaps="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtProductName"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Rainbow Dress - red polyester"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtProductBrand" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtProductPrice"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="AED 459.00"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtProductName" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtStock"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text=" . In Stock"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintBaseline_toBaselineOf="@+id/txtProductPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/txtProductPrice"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toEndOf="@id/txtProductPrice"
+            app:layout_constraintTop_toTopOf="@id/txtProductPrice" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddToWish"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/outline_btn"
+            android:drawableStart="@drawable/whishlist"
+            android:drawablePadding="4dp"
+            android:paddingHorizontal="8dp"
+            android:text="@string/add_to_wishlist"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnAddToCompare"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtProductPrice" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAddToCompare"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/outline_btn"
+            android:drawableStart="@drawable/compare"
+            android:drawablePadding="4dp"
+            android:paddingHorizontal="8dp"
+            android:text="@string/add_to_compare"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/btnEmail"
+            app:layout_constraintStart_toEndOf="@+id/btnAddToWish"
+            app:layout_constraintTop_toBottomOf="@id/txtProductPrice" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="4dp"
+            android:paddingHorizontal="4dp"
+            android:text="@string/email"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/btnAddToCompare"
+            app:layout_constraintTop_toBottomOf="@id/txtProductPrice" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/btnAddToCompare" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSize"
+            style="@style/headerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Size"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtQty"
+            style="@style/headerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Qty"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintHorizontal_bias="0.85"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnS"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:text="S"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnM"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:text="M"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/btnS"
+            app:layout_constraintTop_toBottomOf="@id/txtSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnL"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:text="L"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/btnM"
+            app:layout_constraintTop_toBottomOf="@id/txtSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnXL"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:text="XL"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/btnL"
+            app:layout_constraintTop_toBottomOf="@id/txtSize" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFS"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/outline_btn"
+            android:text="Free Size"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/btnXL"
+            app:layout_constraintTop_toBottomOf="@id/txtSize" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFS"
+            app:layout_constraintEnd_toEndOf="@id/txtQty"
+            app:layout_constraintStart_toStartOf="@id/txtQty"
+            app:layout_constraintTop_toTopOf="@id/btnFS">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMinus"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/minus"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCartQty"
+                style="@style/headerText"
+                android:layout_marginTop="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:text="5"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/imgAdd"
+                app:layout_constraintEnd_toStartOf="@id/imgAdd"
+                app:layout_constraintTop_toTopOf="@id/imgAdd"
+                app:layout_constraintStart_toEndOf="@id/imgMinus" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgAdd"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/btnS" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDesc"
+            style="@style/headerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/description"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle=""
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/divider2"
+            app:textAllCaps="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDescr"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/dummy"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtDesc" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtAddInfo"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/additional_info"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtDescr" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvFeature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline12"
+            app:layout_constraintStart_toStartOf="@id/guideline11"
+            app:layout_constraintTop_toBottomOf="@id/txtAddInfo"
+            tools:itemCount="5"
+            tools:listitem="@layout/product_feature_item" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/brown_bg_btn"
+            android:drawableStart="@drawable/details_add_to_bag"
+            android:text="@string/add_to_cart"
+            android:textColor="@color/white"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBuy"
+            app:layout_constraintEnd_toStartOf="@id/btnBuy"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBuy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/filled_btn"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcvFeature"
+            app:layout_constraintWidth_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

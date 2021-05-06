@@ -24,4 +24,10 @@
     <string name="select_gender">Select Gender</string>
     <string name="please_uncheck_me">Please uncheck me</string>
     <string name="checkbox">Checkbox</string>
+    <string name="description">Description</string>
+    <string name="dummy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</string>
+    <string name="additional_info">Additional Info</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="add_to_compare">Add to compare</string>
+    <string name="add_to_wishlist">Add to wishlist</string>
 </resources>
