@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".SignUpActivity2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                app:navigationIcon="@drawable/back_arrow">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSignIn"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/create_account"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSigndesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:paddingStart="10dp"
+            android:text="@string/let_s_create_your_profile"
+            android:textColor="@color/grey_dark"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSignIn" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardForm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/txtSigndesc">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginVertical="14dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgFb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/facebook"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/light_grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/google"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="28dp"
+            android:text="or"
+            android:textColor="@color/light_grey"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/cardForm"
+            app:textAllCaps="true" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputFName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName"
+            android:layout_marginTop="28dp"
+            android:nextFocusForward="@id/inputLName"
+            android:textColorHint="@color/hint_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/txtOr" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:nextFocusForward="@id/inputMob"
+            android:textColorHint="@color/hint_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/inputMob" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputMob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/mobile_number"
+            android:inputType="phone"
+            android:nextFocusForward="@id/inputPwd"
+            android:textColorHint="@color/hint_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/inputFName" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputCPwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:hint="@string/create_password"
+            android:inputType="textPassword"
+            android:nextFocusForward="@id/inputConPwd"
+            android:textColorHint="@color/hint_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputConPwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableEnd="@drawable/eye"
+            android:drawableRight="@drawable/eye"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword"
+            android:textColorHint="@color/hint_color"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/inputCPwd" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnSignIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/new_sign_up"
+            android:paddingHorizontal="36dp"
+            android:paddingVertical="14dp"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@+id/inputConPwd" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTnC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/tnc_new"
+            android:textAlignment="center"
+            android:textColor="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
+            app:layout_constraintWidth_percent="0.6" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".LoginActivity2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minHeight="?attr/actionBarSize"
+                app:navigationIcon="@drawable/close">
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSignIn"
+            style="@style/headerText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSigndesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/please_login_to_continue_using_our_app"
+            android:textColor="@color/grey_dark"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:paddingStart="10dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSignIn" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pin"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSigndesc"
+            app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintTop_toTopOf="@+id/txtSignIn" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTnC"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:text="@string/tnc_new"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/imgBg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.6" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardForm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/txtTnC"
+            app:layout_constraintEnd_toEndOf="@id/guideline18"
+            app:layout_constraintStart_toStartOf="@id/guideline17"
+            app:layout_constraintTop_toTopOf="@+id/imgBg">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/formBg"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="18dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/sign_in_form_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtNewUser"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_user"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_blue"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txtCreateProf"
+                    app:layout_constraintStart_toStartOf="@id/guideline15" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtCreateProf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:text="@string/let_s_create_your_profile"
+                    android:textAlignment="center"
+                    android:textColor="@color/dark_blue"
+                    app:layout_constraintBottom_toBottomOf="@id/formBg"
+                    app:layout_constraintStart_toStartOf="@id/guideline15" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgAdd"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/add"
+                    app:layout_constraintBottom_toBottomOf="@id/txtCreateProf"
+                    app:layout_constraintEnd_toEndOf="@id/guideline16"
+                    app:layout_constraintTop_toTopOf="@id/txtNewUser" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    app:hintTextColor="?attr/colorPrimary" app:boxStrokeColor="@color/orange"
+                    android:id="@+id/inputEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="22dp"
+                    android:hint="@string/email_or_phone"
+                    android:inputType="textEmailAddress"
+                    android:nextFocusForward="@id/inputPwd"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/guideline16"
+                    app:layout_constraintStart_toStartOf="@id/guideline15"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputPwd"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="22dp"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/guideline16"
+                    app:layout_constraintStart_toStartOf="@id/guideline15"
+                    app:layout_constraintTop_toBottomOf="@id/inputEmail" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txtFwPwd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot"
+                    android:textAlignment="center"
+                    android:textColor="@color/light_blue"
+                    app:layout_constraintBottom_toBottomOf="@id/inputPwd"
+                    app:layout_constraintEnd_toEndOf="@id/inputPwd"
+                    app:layout_constraintTop_toTopOf="@id/inputPwd" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSignIn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/new_sign"
+                    android:paddingHorizontal="36dp"
+                    android:textSize="16sp"
+                    android:paddingVertical="14dp"
+                    android:text="@string/sign_in"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/guideline16"
+                    app:layout_constraintStart_toStartOf="@id/guideline15"
+                    app:layout_constraintTop_toBottomOf="@id/inputPwd" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
